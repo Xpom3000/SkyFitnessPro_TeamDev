@@ -17,7 +17,7 @@ export default function FittingText() {
           <div className="h-36 flex items-centr bg-black rounded-blockRadiusFrame">
             <div className="flex items-center p-3">
               <h2 className=" text-mainColor font-bold text-6xl pr-5">1</h2>
-              <h2 className=" text-white">
+              <h2 className=" text-white font-defaultFont text-2xl">
                 Давно хотели попробовать йогу, но не решались начать
               </h2>
             </div>
@@ -27,7 +27,7 @@ export default function FittingText() {
           <div className="h-36 flex items-center  bg-black rounded-blockRadiusFrame">
             <div className="flex items-center p-3">
               <h2 className=" text-mainColor font-bold text-6xl pr-5">2</h2>
-              <h2 className=" text-white">
+              <h2 className=" text-white font-defaultFont text-2xl">
                 Хотите укрепить позвоночник, избавиться от болей в спине и
                 суставах
               </h2>
@@ -38,7 +38,7 @@ export default function FittingText() {
           <div className="h-36 flex items-center  bg-black rounded-blockRadiusFrame">
             <div className="flex items-center p-3">
               <h2 className=" text-mainColor font-bold text-6xl pr-5">3</h2>
-              <h2 className=" text-white">
+              <h2 className=" text-white font-defaultFont text-2xl">
                 Ищете активность, полезную для тела и души
               </h2>
             </div>
