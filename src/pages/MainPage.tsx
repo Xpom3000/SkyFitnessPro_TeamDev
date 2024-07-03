@@ -1,6 +1,7 @@
 // import Header from "../components/Common/Header";
-import FittingText from "../components/DataComponents/FittingTexts";
+import Directions from "../components/DataComponents/Directions";
+
 
 export default function MainPage() {
-  return <FittingText/>;
+  return <Directions/>;
 }
