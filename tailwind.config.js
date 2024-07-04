@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-// eslint-disable-next-line no-undef
-module.exports = {
+
+export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     screens: {
@@ -32,6 +32,7 @@ module.exports = {
         blockRadius: "30px",
         buttonRadius: "46px",
         progressRadius: "50px",
+        blockRadiusFrame: "28px",
       },
       padding: {
         inptY: "16px",

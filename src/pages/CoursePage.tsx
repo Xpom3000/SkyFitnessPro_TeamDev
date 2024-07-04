@@ -1,5 +1,5 @@
-import Header from "../components/Common/Header";
+import FittingText from "../components/DataComponents/FittingTexts";
 
 export default function CoursePage() {
-  return <Header/>;
+  return <FittingText/>;
 }

@@ -1,5 +1,7 @@
-import Header from "../components/Common/Header";
+// import Header from "../components/Common/Header";
+import Directions from "../components/DataComponents/Directions";
+
 
 export default function MainPage() {
-  return <Header/>;
+  return <Directions/>;
 }
