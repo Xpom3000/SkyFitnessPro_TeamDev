@@ -3,8 +3,8 @@
 export default function LowStartMan() {
   return (
     // <div className="flex h-80 justify-around pl-96">
-    <div className="w-full md:absolute sm:relative md:ml-[450px] sm:ml-0 flex h-full justify-around md:pl-96 sm:pl-0 ">
-      <div className="sm:relative md:absolute z-20 pr-60 pt-28">
+    <div className="w-full absolute ml-0  md:ml-[250px] flex h-full justify-around  sm:pl-0 ">
+      <div className=" absolute z-20 pr-60 pt-28">
         <svg className="h-12">
           <use xlinkHref="/icons/sprite.svg#icon-arc-small" />
         </svg>

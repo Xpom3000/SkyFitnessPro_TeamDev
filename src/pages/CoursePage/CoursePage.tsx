@@ -30,12 +30,12 @@ export default function CoursePage() {
   
   return (
     <>
-      <div className="md: container mx-auto flex flex-col">
-        <Header CorrectForTextPage={"CorrectForTextPage"} page={""} />
+      <div className=" container mx-auto flex flex-col">
+        <Header  page={"CorrectForTextPage"} />
         <CourseLogo courseName={"Степ-аэробика"} />
         <FittingText fittings={fittings} />
         
-        <div className="md:gap-10">
+        <div className="gap-10">
         <Directions directions={directions} />
           <LowStartMan />
           <CallText />
