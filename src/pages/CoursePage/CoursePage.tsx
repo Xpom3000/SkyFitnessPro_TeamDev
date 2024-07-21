@@ -1,4 +1,4 @@
-// import Header from "../../components/Common/Header/Header";
+import Header from "../../components/Common/Header/Header";
 // import { useParams } from "react-router-dom";
 import CourseLogo from "../../components/DataComponents/CourseLogo/CourseLogo";
 import Directions from "../../components/DataComponents/Directions/Directions";
@@ -27,14 +27,16 @@ export default function CoursePage() {
   // const { id } = useParams();
   // const { courses, setCourses } = useCourses();
   // const courseData: string[] = courses.filter((el: string[]) => el.id === id);
+  
   return (
     <>
       <div className="md: container mx-auto flex flex-col">
-        {/* <Header page={""} /> */}
-        <CourseLogo courseName={"Бодифлекс"} />
+        <Header CorrectForTextPage={"CorrectForTextPage"} page={""} />
+        <CourseLogo courseName={"Степ-аэробика"} />
         <FittingText fittings={fittings} />
+        
+        <div className="md:gap-10">
         <Directions directions={directions} />
-        <div className="gap-10">
           <LowStartMan />
           <CallText />
         </div>

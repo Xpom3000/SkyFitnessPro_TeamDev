@@ -5,9 +5,9 @@ import UserModal from "../UserModal/UserModal";
 import { Link } from "react-router-dom";
 import { appRoutes } from "../../../lib/appRoutes";
 
-// import UserModal from "../UserModal/UserModal";
 type HeaderType = {
   page: string;
+  "CorrectForTextPage": string,
 }
 
 export default function Header({page}: HeaderType) {

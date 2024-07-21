@@ -25,12 +25,12 @@ export default function CallText() {
   }
 
   return (
-    <div className="container relative mx-auto mb-10 mt-20 flex rounded-blockRadius shadow-[0_4px_67px_-12px_rgba(0,0,0,0.13)]">
+    <div className="rounded-blockRadius container mx-auto mb-10 mt-20 flex shadow-[0_4px_67px_-12px_rgba(0,0,0,0.13)] sm:absolute sm:z-40 md:relative">
       <div className="container relative flex flex-col p-10">
-        <h2 className="text-6xl font-medium">
+        <h2 className="font-medium sm:text-3xl md:text-6xl">
           Начните путь <br />к новому телу
         </h2>
-        <ul className="py-l list-disc p-10 text-2xl font-normal">
+        <ul className="py-l list-disc p-10 font-normal sm:text-lg/8 md:text-2xl">
           <li>проработка всех групп мышц</li>
           <li>тренировка суставов</li>
           <li>улучшение циркуляции крови</li>

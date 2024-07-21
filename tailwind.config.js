@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 export default {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   theme: {
     screens: {
       sm: "480px",
@@ -60,6 +60,16 @@ export default {
         blockShadow: "0 0px 150px 0px rgba(0, 0, 0, 0.3)",
       },
     },
+  },
+  purge: {
+    content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+    safelist: [ // Вот здесь укажи все возможные классы
+      'bg-yogaColor',
+      'bg-stretchingColor',
+      'bg-zumbaColor',
+      'bg-stepAerobicColor',
+      'bg-bodyFlexColor',
+    ],
   },
   plugins: [],
 };
