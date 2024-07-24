@@ -8,11 +8,11 @@ export default function LowStartMan() {
       </div>
       <div className="z-10 h-full w-full">
         <img
-          className="absolute object-contain object-center"
+          className="absolute object-contain object-center     md:top-[180px] md:left-[310px]"
           src="/images/images_full/low_start_man_hd.png"
         />
       </div>
-      <div className="absolute right-8 top-[120px] z-0">
+      <div className="absolute right-8 top-[120px] z-0 md:top-[370px] md:left-[110px]">
         <svg className="h-[370px] w-[475px] object-contain object-center md:h-[431px] md:w-[770px]">
           <use xlinkHref="/icons/sprite.svg#icon-arc-big " />
         </svg>
