@@ -11,7 +11,7 @@ export default function FittingText({ fittings }: FitttingType) {
       <div className="align-items-center grid container mx-auto md:flex md:flex-row md:gap-4">
         {fittings?.map((fitting, index) => (
           <div key={index} className="my-2.5 w-full border-spacing-2 md:w-4/12">
-            <div className="items-centr rounded-blockRadius box-border flex h-36 bg-black">
+            <div className="items-centr rounded-blockRadiusMin box-border flex h-36 bg-black">
               <div className="flex items-center p-5">
                 <h2 className="pr-5 text-7xl font-medium text-mainColor">
                   {fittings?.indexOf(fitting) + 1}
