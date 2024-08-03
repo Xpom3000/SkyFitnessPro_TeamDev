@@ -21,7 +21,7 @@ export default function CallText({setIsOpenedSigninForm}: CallTextType) {
 
   const handleAddCourse = (id: string) => {
     if (user) {
-      fetchAddFavoriteCourseToUser(user.id, id);
+      fetchAddFavoriteCourseToUser(user!.id, id);
     } else {
       alert("Войдите, чтобы добавить курс");
     }
@@ -32,8 +32,8 @@ export default function CallText({setIsOpenedSigninForm}: CallTextType) {
   }
 
   return (
-    <div className="rounded-blockRadiusMin container absolute top-[95px] z-40 mx-auto mb-10 mt-20 flex overflow-hidden shadow-[0_4px_67px_-12px_rgba(0,0,0,0.13)] md:relative">
-      <div className="w-auto relative flex flex-col p-7 ">
+    <div className="rounded-blockRadiusMin container absolute z-50 top-[180px] mx-auto mb-10 mt-20  bg-slate-50 flex overflow-hidden shadow-[0_4px_67px_-12px_rgba(0,0,0,0.13)] md:relative md:bg-transparent ">
+      <div className="w-auto relative flex flex-col p-10 ">
         <h2 className="text-3xl font-medium md:text-6xl">
           Начните путь <br />к новому телу
         </h2>
@@ -48,7 +48,8 @@ export default function CallText({setIsOpenedSigninForm}: CallTextType) {
           {isAuthorizated ? (
             <button
               className="w-full rounded-buttonRadius bg-mainColor py-inptY font-defaultFont text-base/5 font-normal hover:bg-mainHover"
-              onClick={() => handleAddCourse(el._id)}
+              onClick={() => handleAddCourse}
+               type="button"
             >
               Добавить курс
             </button>

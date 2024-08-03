@@ -26,13 +26,12 @@ export default function CoursePage() {
   const courseData = courses.find((el) => el._id === id);
   return (
     <>
-      <div className="md: container mx-auto flex flex-col">
+      <div className="container mx-auto flex flex-col">
         <Header page={"CorrectForTextPage"} />
         <CourseLogo courseName={courseData?.nameRU} />
         <FittingText fittings={courseData?.fitting} />
         <Directions directions={courseData?.directions} />
-        <div className="relative">
-          
+        <div className="relative -top-[100px] md:-top-[130px]">
           <LowStartMan />
           <CallText setIsOpenedSigninForm={setIsOpenedSigninForm}/>
         </div>

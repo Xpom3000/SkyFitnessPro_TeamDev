@@ -21,7 +21,7 @@ export default function CourseLogo({ courseName }: CourseLogoType) {
           </div>
           <div className="flex h-full w-full justify-end rounded-blockRadiusMin">
             <img
-              className="h-full rounded-blockRadiusMin md:flex"
+              className="h-full hidden rounded-blockRadiusMin md:flex"
               src={matchedCourse?.imgSrcSM}
             />
             <img

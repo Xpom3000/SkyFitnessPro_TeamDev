@@ -4,7 +4,7 @@ type FitttingType = {
 
 export default function FittingText({ fittings }: FitttingType) {
   return (
-    <div className="md:my-14.5 container mx-auto mt-10">
+    <div className=" container mx-auto mt-14 md:my-14.5">
       <p className="pb-3.5 text-2xl font-bold md:pb-10 md:text-5xl">
         Подойдет для вас, если:
       </p>
