@@ -3,12 +3,18 @@ import MyProgressModal from "../../components/OtherModals/MyProgressModal/MyProg
 import Exercises from "../../components/OtherComponents/Exercises/Exercises";
 import { getWorkouts } from "../../api/courses_api";
 import { WorkoutType } from "../../types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useUserCourses } from "../../hooks/useUserCourses";
+import { getAddedCourseOfUser } from "../../api/userCourses_api";
+import { useUserData } from "../../hooks/useUserData";
 
 export default function WorkoutVideoPage() {
   const [isOpenedMyProgress, setIsOpenedMyProgress] = useState<boolean>(false);
-  const { id } = useParams();
+  const [isExistExercises, setIsExistExercises] = useState<boolean>(false);
+  const { id } = useParams() as { id: string };
+  const { userCourses, setUserCourses } = useUserCourses();
+  const { user } = useUserData();
 
   const [workout, setWorkout] = useState<WorkoutType>({
     name: "",
@@ -17,15 +23,35 @@ export default function WorkoutVideoPage() {
     video: "",
   });
 
-  getWorkouts().then((data) => {
-    const matchedWorkout = data.find((el) => el._id === id);
-    setWorkout({
-      name: matchedWorkout!.name,
-      _id: matchedWorkout!._id,
-      exercises: matchedWorkout!.exercises,
-      video: matchedWorkout!.video,
+  useEffect(() => {
+    if (user) {
+      getAddedCourseOfUser(user.id).then((data) => {
+        if (data) {
+          setUserCourses(data);
+        }
+      });
+    }
+  }, [setUserCourses, user]);
+
+  useEffect(() => {
+    getWorkouts().then((data) => {
+      const exercisesData = userCourses
+        .find((element) => element.workouts?.find((elem) => elem._id === id))
+        ?.workouts.find((e) => e._id === id)?.exercises;
+      const matchedWorkout = data.find((el) => el._id === id);
+      if (exercisesData) {
+        setIsExistExercises(true)
+      } else {
+        setIsExistExercises(false)
+      }
+      setWorkout({
+        name: matchedWorkout!.name,
+        _id: matchedWorkout!._id,
+        exercises: exercisesData || [],
+        video: matchedWorkout!.video,
+      });
     });
-  });
+  }, [id, userCourses]);
 
   return (
     <>
@@ -47,14 +73,15 @@ export default function WorkoutVideoPage() {
           ></iframe>
         </div>
       </div>
-      <Exercises
+      {isExistExercises && <Exercises
         setIsOpenedMyProgress={setIsOpenedMyProgress}
         exercises={workout!.exercises}
-      />
+      />}
       {isOpenedMyProgress && (
         <MyProgressModal
           setIsOpenedMyProgress={setIsOpenedMyProgress}
-          exercises={workout!.exercises}
+          workout={workout}
+          setWorkout={setWorkout}
         />
       )}
     </>

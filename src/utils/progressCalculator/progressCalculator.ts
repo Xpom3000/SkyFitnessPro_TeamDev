@@ -1,6 +1,6 @@
-export function exerciseProgress(count: number, max: number) {
-  const res = (count / max) * 100;
-  return Math.round(res);
+export function exerciseProgress(quantity: number, userNumber: number) {
+  const res = (userNumber / quantity) * 100;
+  return Number(Math.round(res));
 }
 
 export function totalProgress(progressValues: number[]) {
@@ -10,7 +10,7 @@ export function totalProgress(progressValues: number[]) {
     initialValue,
   );
 
-  const res = (sumValue / progressValues.length) * 100;
+  const res = sumValue / progressValues.length;
 
   return Math.round(res);
 }
